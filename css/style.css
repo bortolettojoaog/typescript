@@ -55,7 +55,7 @@ section.main {
     margin: 10px 0
 }
 
-form .form-input input {
+form .form-input input, form .form-input select {
     width: 100%;
     margin-top: 4px;
     height: 2rem;

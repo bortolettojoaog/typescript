@@ -1,5 +1,15 @@
-function sum(num1 : number, num2 : number) : number {
-    return num1 + num2;
+function calculate(num1 : number, num2 : number, op : string) : number {
+    if (op === 'sum') {
+        return num1 + num2;
+    } else if (op === 'sub') {
+        return num1 - num2;
+    } else if (op === 'div') {
+        return num1 / num2;
+    } else if (op === 'mul') {
+        return num1 * num2;
+    } else {
+        return -123456789;
+    }
 }
 
 function sumTwoNumbers(e) {
@@ -7,13 +17,19 @@ function sumTwoNumbers(e) {
 
     var n1 = parseInt((<HTMLInputElement>document.getElementById("number1")).value);
     var n2 = parseInt((<HTMLInputElement>document.getElementById("number2")).value);
+    
+    var op = (<HTMLInputElement>document.getElementById("select")).value;
 
-    addElement();
+    var result = calculate(n1, n2, op);
 
-    alert(sum(n1, n2));
+    if (result === -123456789) return;
+
+    addElement(result);
 }
 
-function addElement() {
+function addElement(result : number) {
     const element: HTMLElement = document.getElementById('main') as HTMLElement;
-    element.innerHTML = `<div class="warn"><p style="text-align: center;">Sum performed successfully!</p> <a style="display: block; text-decoration: none; text-align: center;" href="index.html">Home</a></div>`;
+    element.innerHTML = `<div class="warn"><p style="text-align: center;">Successfully calculated!</p> <a style="display: block; text-decoration: none; text-align: center;" href="index.html">Home</a></div>`;
+
+    alert('Result: ' + result);
 }
