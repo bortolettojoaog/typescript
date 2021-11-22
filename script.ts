@@ -12,7 +12,7 @@ function calculate(num1 : number, num2 : number, op : string) : number {
     }
 }
 
-function sumTwoNumbers(e) {
+function calculateTwoNumbers(e) {
     e.preventDefault();
 
     var n1 = parseInt((<HTMLInputElement>document.getElementById("number1")).value);
@@ -24,12 +24,24 @@ function sumTwoNumbers(e) {
 
     if (result === -123456789) return;
 
-    addElement(result);
+    addElement();
+
+    printResult(result);
+
+    redirect();
 }
 
-function addElement(result : number) {
+function addElement() {
     const element: HTMLElement = document.getElementById('main') as HTMLElement;
     element.innerHTML = `<div class="warn"><p style="text-align: center;">Successfully calculated!</p> <a style="display: block; text-decoration: none; text-align: center;" href="index.html">Home</a></div>`;
+}
 
+function printResult(result : number) {
     alert('Result: ' + result);
+}
+
+function redirect() {
+    setInterval(() => {
+        location.href="index.html";
+    }, 3000);
 }
