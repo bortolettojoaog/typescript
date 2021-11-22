@@ -26,22 +26,24 @@ function calculateTwoNumbers(e) {
 
     addElement();
 
-    printResult(result);
-
-    redirect();
+    interval(result);
 }
 
 function addElement() {
     const element: HTMLElement = document.getElementById('main') as HTMLElement;
-    element.innerHTML = `<div class="warn"><p style="text-align: center;">Successfully calculated!</p> <a style="display: block; text-decoration: none; text-align: center;" href="index.html">Home</a></div>`;
+    element.innerHTML = `<div class="warn"><p style="text-align: center;">Successfully calculated!</p></div>`;
 }
 
 function printResult(result : number) {
     alert('Result: ' + result);
 }
 
-function redirect() {
+function interval(result : number) {
     setInterval(() => {
-        location.href="index.html";
-    }, 3000);
+        printResult(result);
+
+        setInterval(() => {
+            location.href="index.html";
+        }, 1000);
+    }, 2000);
 }
