@@ -38,12 +38,16 @@ function printResult(result : number) {
     alert('Result: ' + result);
 }
 
+function redirect() {
+    setInterval(() => {
+        location.href="index.html";
+    }, 1000);
+}
+
 function interval(result : number) {
     setInterval(() => {
         printResult(result);
-
-        setInterval(() => {
-            location.href="index.html";
-        }, 1000);
     }, 2000);
+
+    redirect();
 }
