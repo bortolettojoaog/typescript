@@ -24,8 +24,6 @@ function calculateTwoNumbers(e) {
 
     if (result === -123456789) return;
 
-    addElement();
-
     interval(result);
 }
 
@@ -36,18 +34,30 @@ function addElement() {
 
 function printResult(result : number) {
     alert('Result: ' + result);
+
+    alert('Is even? ' + isEven(result));
 }
 
 function redirect() {
-    setInterval(() => {
+    setTimeout(() => {
         location.href="index.html";
     }, 1000);
 }
 
 function interval(result : number) {
-    setInterval(() => {
-        printResult(result);
-    }, 2000);
+    addElement();
 
-    redirect();
+    setTimeout(() => {
+        printResult(result);
+
+        redirect();
+    }, 500);
+}
+
+function isEven(result) {
+    if (result % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
