@@ -35,7 +35,7 @@
 
 ### Prerequisites:
 
-You need to have the following tools installed on your machine: [Git](https://git-scm.com), [Node](https://nodejs.org/en/) and [VSCode](https://code.visualstudio.com/)
+You need to have the following tools installed on your machine: [Git](https://git-scm.com), [Node](https://nodejs.org/en/), [TypeScript](https://www.typescriptlang.org/) and [VSCode](https://code.visualstudio.com/)
 
 <br/>
 
